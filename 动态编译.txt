@@ -1,0 +1,12 @@
+﻿g++ -fPIC -shared -o libmymath.so add.cpp sub.cpp	=>	libmymath.so
+
+g++ -o main main.cpp -L. -lmymath	=>	main
+
+cp ./libmymath.so /usr/lib/
+
+./main
+(运行失败的话，修改环境变量)
+
+eport LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+
+sudo ldconfig

@@ -1,0 +1,12 @@
+﻿g++ -c add.cpp	=>	add.o
+
+g++ -c sub.cpp	=>	sub.o
+
+ar cr libmymath.a sub.o add.o	=>	libmymath.a(r选项：在库中插入模块（替换）；c选项：创建一个库)
+
+ar tv libmymath.a(显示库文件中有哪些目标文件，显示文件名,时间,大小等详细信息)
+
+g++ -o main main.cpp -L. -lmymath	=>	main
+
+
+./main
